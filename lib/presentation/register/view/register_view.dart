@@ -3,6 +3,7 @@ import 'package:on_boarding_login_register_ui/app/components/my_form.dart';
 import 'package:on_boarding_login_register_ui/app/extensions.dart';
 import 'package:on_boarding_login_register_ui/presentation/login/view/login_view.dart';
 
+import '../../../app/components/my_button.dart';
 import '../../../app/components/my_country_code_form.dart';
 import '../../../app/components/my_text.dart';
 import '../../../app/components/or_login_social.dart';
@@ -81,6 +82,13 @@ class _RegisterViewState extends State<RegisterView> {
                       suffixIcon: Icons.remove_red_eye,
                     ),
                     const SizedBox(height: AppSize.ap12),
+                    const SizedBox(
+                      height: AppSize.ap12,
+                    ),
+                    MyButton(
+                      text: 'Register',
+                      onPressed: () {},
+                    ),
                     const SizedBox(height: 50),
                     const OrLoginSocial(),
                     const SizedBox(height: 50),
@@ -95,7 +103,7 @@ class _RegisterViewState extends State<RegisterView> {
                               context.pushReplacement(const LoginView());
                             },
                             child: Text(
-                              'Register here',
+                              'Sign in Here',
                               style: getRegularStyle(color: Colors.blue),
                             ))
                       ],
