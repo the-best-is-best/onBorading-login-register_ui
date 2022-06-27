@@ -77,9 +77,7 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: AppSize.ap12,
-              ),
+              const SizedBox(height: AppSize.ap12),
               MyButton(
                 text: 'Sign In',
                 onPressed: () {},

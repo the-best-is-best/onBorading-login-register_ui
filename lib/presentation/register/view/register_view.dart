@@ -82,9 +82,7 @@ class _RegisterViewState extends State<RegisterView> {
                       suffixIcon: Icons.remove_red_eye,
                     ),
                     const SizedBox(height: AppSize.ap12),
-                    const SizedBox(
-                      height: AppSize.ap12,
-                    ),
+                    const SizedBox(height: AppSize.ap12),
                     MyButton(
                       text: 'Register',
                       onPressed: () {},
