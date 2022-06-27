@@ -189,7 +189,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             dotColor: Colors.grey,
             activeDotColor: Colors.teal,
             dotHeight: AppSpacing.ap12,
-            dotWidth: AppSpacing.ap12,
+            dotWidth: 30,
             spacing: AppSpacing.ap12,
           ),
       count: count,
