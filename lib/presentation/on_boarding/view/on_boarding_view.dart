@@ -91,6 +91,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                                     width:
                                         MediaQuery.of(context).size.width * .90,
                                   ),
+                                  const SizedBox(
+                                    height: AppSpacing.ap12,
+                                  ),
                                   Text(
                                     item.title,
                                     style: getMediumStyle(),
