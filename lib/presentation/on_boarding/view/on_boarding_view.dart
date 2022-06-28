@@ -84,18 +84,16 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text(
-                                    item.title,
-                                  ),
-                                  const SizedBox(
-                                    height: AppSize.ap12,
-                                  ),
                                   SvgPicture.asset(
                                     item.urlImage,
                                     height: .3 * context.height,
                                     fit: BoxFit.cover,
                                     width:
                                         MediaQuery.of(context).size.width * .90,
+                                  ),
+                                  Text(
+                                    item.title,
+                                    style: getMediumStyle(),
                                   ),
                                   const SizedBox(
                                     height: AppSpacing.ap12,
@@ -107,6 +105,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                                       item.description,
                                       textAlign: TextAlign.center,
                                       softWrap: true,
+                                      style: getRegularStyle(),
                                     ),
                                   ),
                                 ],
