@@ -45,7 +45,10 @@ class MyPhoneFormForm extends StatelessWidget {
           ),
         ),
       ),
-      validator: PhoneValidator.validMobile(), // default PhoneValidator.valid()
+      validator: PhoneValidator.compose([
+        PhoneValidator.required(),
+        PhoneValidator.validMobile(),
+      ]), // default PhoneValidator.valid()
       countrySelectorNavigator: const CountrySelectorNavigator.bottomSheet(),
       showFlagInInput: false, // default
       flagSize: FontSize.s16, // default
