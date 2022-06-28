@@ -13,10 +13,10 @@ class MyPhoneFormForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return PhoneFormField(
       defaultCountry: IsoCode.EG, // default
-      initialValue: PhoneNumber.fromRaw('+201277777777'),
       countryCodeStyle: getMediumStyle(),
       decoration: const InputDecoration(
         labelText: 'Phone', // default to null
+        hintText: 'Eg.812345678',
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: Colors.grey,

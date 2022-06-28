@@ -4,7 +4,7 @@ import 'package:on_boarding_login_register_ui/app/extensions.dart';
 import 'package:on_boarding_login_register_ui/presentation/login/view/login_view.dart';
 
 import '../../../app/components/my_button.dart';
-import '../../../app/components/my_country_code_form.dart';
+import '../../../app/components/my_phone_form.dart';
 import '../../../app/components/my_text.dart';
 import '../../../app/components/or_login_social.dart';
 import '../../../app/components/styles_manger.dart';
@@ -49,7 +49,9 @@ class _RegisterViewState extends State<RegisterView> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 MyText(label: 'Register', textStyle: getBoldStyle()),
-                const TextButtonIcon(text: 'Help'),
+                const TextButtonIcon(
+                  text: 'Help',
+                ),
               ],
             ),
             const SizedBox(
@@ -60,7 +62,10 @@ class _RegisterViewState extends State<RegisterView> {
                 child: Column(
                   children: [
                     const MyForm(
-                        label: 'Email', type: TextInputType.emailAddress),
+                      label: 'Email',
+                      type: TextInputType.emailAddress,
+                      hint: 'Eg.example@gmail.com',
+                    ),
                     const SizedBox(height: AppSize.ap12),
                     // Row(
                     //   children: const [
@@ -84,6 +89,7 @@ class _RegisterViewState extends State<RegisterView> {
                       label: 'Password',
                       isPassword: true,
                       suffixIcon: Icons.remove_red_eye,
+                      hint: 'Password',
                     ),
                     const SizedBox(height: AppSize.ap12),
                     const SizedBox(height: AppSize.ap12),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:on_boarding_login_register_ui/app/components/circular_icon.dart';
 import 'package:on_boarding_login_register_ui/app/components/my_button.dart';
-import 'package:on_boarding_login_register_ui/app/components/my_country_code_form.dart';
+import 'package:on_boarding_login_register_ui/app/components/my_phone_form.dart';
 import 'package:on_boarding_login_register_ui/app/components/my_text.dart';
 import 'package:on_boarding_login_register_ui/app/components/styles_manger.dart';
 import 'package:on_boarding_login_register_ui/app/extensions.dart';

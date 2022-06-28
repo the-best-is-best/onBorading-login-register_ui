@@ -13,7 +13,6 @@ class CircularIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      backgroundColor: Colors.teal,
       radius: AppSize.ap12,
       child: Icon(
         icon ?? Icons.question_mark_sharp,
