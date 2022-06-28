@@ -62,29 +62,19 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   Form(
                     key: _formKey,
-                    child: Container(
-                      width: context.width,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.grey,
-                          width: AppSpacing.ap1_5,
+                    child: Row(
+                      children: const [
+                        Expanded(
+                          child: MyCountryCodeForm(),
                         ),
-                      ),
-                      child: Row(
-                        children: [
-                          const SizedBox(
-                              width: 100, child: MyCountryCodeForm()),
-                          SizedBox(
-                            width: context.width - 150,
-                            child: const MyForm(
-                              type: TextInputType.phone,
-                              label: 'Phone Number',
-                              enabledBorder: false,
-                            ),
+                        Expanded(
+                          flex: 2,
+                          child: MyForm(
+                            type: TextInputType.phone,
+                            label: 'Phone Number',
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
