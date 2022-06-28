@@ -23,16 +23,16 @@ class _OnBoardingViewState extends State<OnBoardingView> {
     OnBoarding(
         title: 'Welcome to Food Store',
         description: 'Food Store is one the way to serve you',
-        urlImage: const $AssetsSvgGen().aircraft.path),
+        urlImage: const $AssetsSvgGen().onBoard1.path),
     OnBoarding(
         title: 'Connect with the world',
         description:
             'See All things happening around the world by a click in your phone.',
-        urlImage: const $AssetsSvgGen().travailing.path),
+        urlImage: const $AssetsSvgGen().onboard2.path),
     OnBoarding(
         title: "Let's Get Started",
         description: "Let's see what we get",
-        urlImage: const $AssetsSvgGen().buying.path),
+        urlImage: const $AssetsSvgGen().onboard3.path),
   ];
   final boardController = PageController();
   int index = 0;

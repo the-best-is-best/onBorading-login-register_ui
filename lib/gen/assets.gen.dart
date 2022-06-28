@@ -28,11 +28,14 @@ class $AssetsSvgGen {
   /// File path: assets/svg/aircraft.svg
   SvgGenImage get aircraft => const SvgGenImage('assets/svg/aircraft.svg');
 
-  /// File path: assets/svg/buying.svg
-  SvgGenImage get buying => const SvgGenImage('assets/svg/buying.svg');
+  /// File path: assets/svg/onBoard1.svg
+  SvgGenImage get onBoard1 => const SvgGenImage('assets/svg/onBoard1.svg');
 
-  /// File path: assets/svg/travailing.svg
-  SvgGenImage get travailing => const SvgGenImage('assets/svg/travailing.svg');
+  /// File path: assets/svg/onboard2.svg
+  SvgGenImage get onboard2 => const SvgGenImage('assets/svg/onboard2.svg');
+
+  /// File path: assets/svg/onboard3.svg
+  SvgGenImage get onboard3 => const SvgGenImage('assets/svg/onboard3.svg');
 }
 
 class Assets {
