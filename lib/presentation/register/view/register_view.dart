@@ -62,20 +62,22 @@ class _RegisterViewState extends State<RegisterView> {
                     const MyForm(
                         label: 'Email', type: TextInputType.emailAddress),
                     const SizedBox(height: AppSize.ap12),
-                    Row(
-                      children: const [
-                        Expanded(
-                          child: MyCountryCodeForm(),
-                        ),
-                        Expanded(
-                          flex: 2,
-                          child: MyForm(
-                            type: TextInputType.phone,
-                            label: 'Phone Number',
-                          ),
-                        ),
-                      ],
-                    ),
+                    // Row(
+                    //   children: const [
+                    //     Expanded(
+                    //       child: MyCountryCodeForm(),
+                    //     ),
+                    //     Expanded(
+                    //       flex: 2,
+                    //       child: MyForm(
+                    //         type: TextInputType.phone,
+                    //         label: 'Phone Number',
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
+                    const MyPhoneFormForm(),
+
                     const SizedBox(height: AppSize.ap12),
                     const MyForm(
                       type: TextInputType.visiblePassword,

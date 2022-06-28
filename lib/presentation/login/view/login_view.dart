@@ -62,20 +62,21 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   Form(
                     key: _formKey,
-                    child: Row(
-                      children: const [
-                        Expanded(
-                          child: MyCountryCodeForm(),
-                        ),
-                        Expanded(
-                          flex: 2,
-                          child: MyForm(
-                            type: TextInputType.phone,
-                            label: 'Phone Number',
-                          ),
-                        ),
-                      ],
-                    ),
+                    // child: Row(
+                    //   children: const [
+                    //     Expanded(
+                    //       child: MyCountryCodeForm(),
+                    //     ),
+                    //     Expanded(
+                    //       flex: 2,
+                    //       child: MyForm(
+                    //         type: TextInputType.phone,
+                    //         label: 'Phone Number',
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
+                    child: const MyPhoneFormForm(),
                   ),
                 ],
               ),

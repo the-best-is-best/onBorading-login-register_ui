@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FontWeightManager {
   static const FontWeight light = FontWeight.w300;
@@ -9,12 +10,13 @@ class FontWeightManager {
 }
 
 class FontSize {
-  static const double s14 = 14;
-  static const double s16 = 16;
-  static const double s18 = 18;
-  static const double s24 = 24;
-  static const double s28 = 28;
-  static const double s30 = 30;
-  static const double s32 = 32;
-  static const double s40 = 40;
+  static double get s14 => 14.sp;
+  static double get s16 => 16.sp;
+  static double get s18 => 18.sp;
+  static double get s20 => 20.sp;
+  static double get s24 => 24.sp;
+  static double get s28 => 28.sp;
+  static double get s30 => 30.sp;
+  static double get s32 => 32.sp;
+  static double get s40 => 40.sp;
 }
