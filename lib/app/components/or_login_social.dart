@@ -28,15 +28,14 @@ class _OrLoginSocialState extends State<OrLoginSocial> {
           Row(
             children: [
               const Expanded(
-                  flex: 6,
                   child: Divider(
-                    thickness: 1,
-                  )),
-              Expanded(
-                  child: Center(
-                      child: MyText(label: 'Or', textStyle: getLightStyle()))),
+                thickness: 1,
+              )),
+              Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: AppSpacing.ap12),
+                  child: MyText(label: 'Or', textStyle: getLightStyle())),
               const Expanded(
-                flex: 6,
                 child: Divider(
                   thickness: 1,
                 ),

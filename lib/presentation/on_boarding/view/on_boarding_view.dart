@@ -41,118 +41,106 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Stack(
-          children: [
-            SizedBox(
-              height: context.height,
-              child: Padding(
-                padding: const EdgeInsets.all(AppSpacing.ap12),
-                child: SingleChildScrollView(
-                  child: Column(children: [
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: MyButton(
-                        text: 'Skip',
-                        borderSize: 50,
-                        onPressed: () {
-                          context.pushReplacement(const LoginView());
-                        },
-                        width: 75,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: AppSize.ap12,
-                    ),
-                    Image.asset(
-                      const $AssetsImagesGen().logo.path,
-                      height: 140,
-                    ),
-                    SizedBox(
-                      height: context.height * .5,
-                      child: PageView(
-                        allowImplicitScrolling: true,
-                        controller: boardController,
-                        children: _onBoardingData
-                            .map((item) => Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: AppSpacing.ap20),
-                                  child: Center(
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          item.title,
-                                        ),
-                                        const SizedBox(
-                                          height: AppSize.ap12,
-                                        ),
-                                        SvgPicture.asset(
-                                          item.urlImage,
-                                          height: .3 * context.height,
-                                          fit: BoxFit.cover,
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              .90,
-                                        ),
-                                        const SizedBox(
-                                          height: AppSpacing.ap12,
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 8.0),
-                                          child: Text(
-                                            item.description,
-                                            textAlign: TextAlign.center,
-                                            softWrap: true,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ))
-                            .toList(),
-                      ),
-                    ),
-                  ]),
-                ),
-              ),
-            ),
-            Positioned(
-              bottom: 150,
-              child: SizedBox(
-                width: context.width,
-                child: Center(
-                  child: buildIndicator(
-                      boardController: boardController,
-                      count: _onBoardingData.length),
-                ),
-              ),
-            ),
-            Positioned(
-              bottom: 80,
-              left: 20,
-              right: 20,
-              child: SizedBox(
-                width: context.width,
-                child: Center(
+        body: SizedBox(
+          height: context.height,
+          child: Padding(
+            padding: const EdgeInsets.all(AppSpacing.ap12),
+            child: Column(children: [
+              Expanded(
+                child: Align(
+                  alignment: Alignment.topRight,
                   child: MyButton(
-                    text: 'Get Start',
+                    text: 'Skip',
+                    btnColor: const Color.fromARGB(255, 255, 217, 48),
+                    txtColor: Colors.black,
+                    borderSize: 50,
                     onPressed: () {
                       context.pushReplacement(const LoginView());
                     },
-                    borderSize: AppSize.ap8,
-                    width: context.width - 40,
+                    width: 75,
                   ),
                 ),
               ),
-            ),
-            Positioned(
-              bottom: 20,
-              left: 30,
-              right: 30,
-              child: SizedBox(
+              Expanded(
+                flex: 2,
+                child: SizedBox(
+                  height: 140,
+                  child: Image.asset(
+                    const $AssetsImagesGen().logo.path,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 6,
+                child: PageView(
+                  allowImplicitScrolling: true,
+                  controller: boardController,
+                  children: _onBoardingData
+                      .map((item) => Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: AppSpacing.ap20),
+                            child: Center(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    item.title,
+                                  ),
+                                  const SizedBox(
+                                    height: AppSize.ap12,
+                                  ),
+                                  SvgPicture.asset(
+                                    item.urlImage,
+                                    height: .3 * context.height,
+                                    fit: BoxFit.cover,
+                                    width:
+                                        MediaQuery.of(context).size.width * .90,
+                                  ),
+                                  const SizedBox(
+                                    height: AppSpacing.ap12,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: AppSize.ap8),
+                                    child: Text(
+                                      item.description,
+                                      textAlign: TextAlign.center,
+                                      softWrap: true,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ))
+                      .toList(),
+                ),
+              ),
+              Expanded(
+                child: SizedBox(
+                  width: context.width,
+                  child: Center(
+                    child: buildIndicator(
+                        boardController: boardController,
+                        count: _onBoardingData.length),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: SizedBox(
+                  width: context.width,
+                  child: Center(
+                    child: MyButton(
+                        text: 'Get Started',
+                        onPressed: () {
+                          context.pushReplacement(const LoginView());
+                        },
+                        borderSize: AppSize.ap8,
+                        btnColor: Colors.teal),
+                  ),
+                ),
+              ),
+              Expanded(
                 child: Center(
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -170,9 +158,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                             ))
                       ]),
                 ),
-              ),
-            ),
-          ],
+              )
+            ]),
+          ),
         ),
       ),
     );
@@ -187,7 +175,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
       effect: indicatorEffect ??
           const WormEffect(
             dotColor: Colors.grey,
-            activeDotColor: Colors.teal,
+            activeDotColor: Color.fromARGB(255, 196, 148, 66),
             dotHeight: AppSpacing.ap12,
             dotWidth: 30,
             spacing: AppSpacing.ap12,

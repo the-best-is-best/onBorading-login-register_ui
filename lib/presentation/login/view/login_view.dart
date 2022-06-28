@@ -62,17 +62,29 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   Form(
                     key: _formKey,
-                    child: Row(
-                      children: const [
-                        Expanded(child: MyCountryCodeForm()),
-                        Expanded(
-                          flex: 2,
-                          child: MyForm(
-                            type: TextInputType.phone,
-                            label: 'Phone Number',
-                          ),
+                    child: Container(
+                      width: context.width,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.grey,
+                          width: AppSpacing.ap1_5,
                         ),
-                      ],
+                      ),
+                      child: Row(
+                        children: [
+                          const SizedBox(
+                              width: 100, child: MyCountryCodeForm()),
+                          SizedBox(
+                            width: context.width - 150,
+                            child: const MyForm(
+                              type: TextInputType.phone,
+                              label: 'Phone Number',
+                              enabledBorder: false,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -82,10 +94,11 @@ class _LoginViewState extends State<LoginView> {
                 text: 'Sign In',
                 onPressed: () {},
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: AppSize.ap14),
               const OrLoginSocial(),
-              const SizedBox(height: 50),
+              const SizedBox(height: AppSize.ap14),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   MyText(
                       label: "Doesn't has any account?",

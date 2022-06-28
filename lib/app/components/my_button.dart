@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:on_boarding_login_register_ui/app/components/styles_manger.dart';
 import 'package:on_boarding_login_register_ui/app/extensions.dart';
 
 import '../../core/resources/value_manger.dart';
@@ -9,6 +10,8 @@ class MyButton extends StatelessWidget {
   final VoidCallback onPressed;
   final double? width;
   final double? height;
+  final Color? btnColor;
+  final Color? txtColor;
 
   const MyButton(
       {Key? key,
@@ -16,7 +19,9 @@ class MyButton extends StatelessWidget {
       this.borderSize = AppSize.ap12,
       required this.onPressed,
       this.width,
-      this.height})
+      this.height,
+      this.btnColor,
+      this.txtColor})
       : super(key: key);
 
   @override
@@ -27,10 +32,15 @@ class MyButton extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(borderSize)),
+            borderRadius: BorderRadius.circular(borderSize),
+          ),
+          primary: btnColor,
         ),
         onPressed: onPressed,
-        child: Text(text),
+        child: Text(
+          text,
+          style: getRegularStyle(color: txtColor ?? Colors.white),
+        ),
       ),
     );
   }

@@ -62,17 +62,29 @@ class _RegisterViewState extends State<RegisterView> {
                     const MyForm(
                         label: 'Email', type: TextInputType.emailAddress),
                     const SizedBox(height: AppSize.ap12),
-                    Row(
-                      children: const [
-                        Expanded(child: MyCountryCodeForm()),
-                        Expanded(
-                          flex: 2,
-                          child: MyForm(
-                            type: TextInputType.phone,
-                            label: 'Phone Number',
-                          ),
+                    Container(
+                      width: context.width,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.grey,
+                          width: AppSpacing.ap1_5,
                         ),
-                      ],
+                      ),
+                      child: Row(
+                        children: [
+                          const SizedBox(
+                              width: 100, child: MyCountryCodeForm()),
+                          SizedBox(
+                            width: context.width - 150,
+                            child: const MyForm(
+                              type: TextInputType.phone,
+                              label: 'Phone Number',
+                              enabledBorder: false,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     const SizedBox(height: AppSize.ap12),
                     const MyForm(
@@ -87,9 +99,9 @@ class _RegisterViewState extends State<RegisterView> {
                       text: 'Register',
                       onPressed: () {},
                     ),
-                    const SizedBox(height: 50),
+                    const SizedBox(height: AppSize.ap14),
                     const OrLoginSocial(),
-                    const SizedBox(height: 50),
+                    const SizedBox(height: AppSize.ap14),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

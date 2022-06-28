@@ -6,6 +6,8 @@ class MyForm extends StatelessWidget {
   final String label;
   final bool isPassword;
   final TextInputType type;
+  final bool enabledBorder;
+
   final IconData? suffixIcon;
 
   const MyForm(
@@ -13,7 +15,8 @@ class MyForm extends StatelessWidget {
       required this.label,
       this.isPassword = false,
       required this.type,
-      this.suffixIcon})
+      this.suffixIcon,
+      this.enabledBorder = true})
       : super(key: key);
 
   @override
@@ -22,12 +25,15 @@ class MyForm extends StatelessWidget {
       keyboardType: type,
       decoration: InputDecoration(
           label: Text(label),
-          enabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide(
-                color: Colors.grey,
-                width: AppSpacing.ap1_5,
-              ),
-              borderRadius: BorderRadius.all(Radius.circular(AppSpacing.ap8))),
+          enabledBorder: enabledBorder
+              ? const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.grey,
+                    width: AppSpacing.ap1_5,
+                  ),
+                  borderRadius:
+                      BorderRadius.all(Radius.circular(AppSpacing.ap8)))
+              : null,
           suffixIcon: Icon(
             suffixIcon,
             color: Colors.black,
