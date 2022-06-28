@@ -82,7 +82,13 @@ class _LoginViewState extends State<LoginView> {
               const SizedBox(height: AppSize.ap12),
               MyButton(
                 text: 'Sign In',
-                onPressed: () {},
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Processing Data')),
+                    );
+                  }
+                },
               ),
               const SizedBox(height: AppSize.ap14),
               const OrLoginSocial(),

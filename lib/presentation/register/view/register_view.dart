@@ -87,7 +87,13 @@ class _RegisterViewState extends State<RegisterView> {
                     const SizedBox(height: AppSize.ap12),
                     MyButton(
                       text: 'Register',
-                      onPressed: () {},
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Processing Data')),
+                          );
+                        }
+                      },
                     ),
                     const SizedBox(height: AppSize.ap14),
                     const OrLoginSocial(),
