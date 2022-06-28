@@ -21,6 +21,7 @@ class RegisterView extends StatefulWidget {
 
 class _RegisterViewState extends State<RegisterView> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  bool isHidePass = true;
 
   @override
   Widget build(BuildContext context) {
@@ -84,11 +85,17 @@ class _RegisterViewState extends State<RegisterView> {
                     const MyPhoneFormForm(),
 
                     const SizedBox(height: AppSize.ap12),
-                    const MyForm(
+                    MyForm(
                       type: TextInputType.visiblePassword,
                       label: 'Password',
-                      isPassword: true,
-                      suffixIcon: Icons.remove_red_eye,
+                      isPassword: isHidePass,
+                      suffixIcon:
+                          isHidePass ? Icons.visibility_off : Icons.visibility,
+                      suffixIconPressed: () {
+                        setState(() {
+                          isHidePass = !isHidePass;
+                        });
+                      },
                       hint: 'Password',
                     ),
                     const SizedBox(height: AppSize.ap12),

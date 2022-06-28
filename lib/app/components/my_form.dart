@@ -9,7 +9,7 @@ class MyForm extends StatelessWidget {
 
   final bool isPassword;
   final TextInputType type;
-
+  final VoidCallback? suffixIconPressed;
   final IconData? suffixIcon;
 
   const MyForm({
@@ -19,6 +19,7 @@ class MyForm extends StatelessWidget {
     required this.type,
     this.suffixIcon,
     required this.hint,
+    this.suffixIconPressed,
   }) : super(key: key);
 
   @override
@@ -34,38 +35,42 @@ class MyForm extends StatelessWidget {
         TextFormField(
           keyboardType: type,
           decoration: InputDecoration(
-              hintText: hint,
-              enabledBorder: const OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Colors.grey,
-                  width: AppSpacing.ap1_5,
-                ),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(AppSpacing.ap8),
-                ),
+            hintText: hint,
+            enabledBorder: const OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.grey,
+                width: AppSpacing.ap1_5,
               ),
-              focusedBorder: const OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Colors.black,
-                  width: AppSpacing.ap1_5,
-                ),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(AppSpacing.ap8),
-                ),
+              borderRadius: BorderRadius.all(
+                Radius.circular(AppSpacing.ap8),
               ),
-              errorBorder: const OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Colors.red,
-                  width: AppSpacing.ap1_5,
-                ),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(AppSpacing.ap8),
-                ),
+            ),
+            focusedBorder: const OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.black,
+                width: AppSpacing.ap1_5,
               ),
-              suffixIcon: Icon(
+              borderRadius: BorderRadius.all(
+                Radius.circular(AppSpacing.ap8),
+              ),
+            ),
+            errorBorder: const OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.red,
+                width: AppSpacing.ap1_5,
+              ),
+              borderRadius: BorderRadius.all(
+                Radius.circular(AppSpacing.ap8),
+              ),
+            ),
+            suffixIcon: IconButton(
+              icon: Icon(
                 suffixIcon,
                 color: Colors.black,
-              )),
+              ),
+              onPressed: suffixIconPressed,
+            ),
+          ),
           obscureText: isPassword,
           validator: (String? val) {
             if (val!.isEmpty) {
