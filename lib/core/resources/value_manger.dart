@@ -7,6 +7,7 @@ class AppSize {
   static const double ap16 = 16;
   static const double ap18 = 18;
   static const double ap20 = 20;
+  static const double ap30 = 30;
 }
 
 class AppSpacing {

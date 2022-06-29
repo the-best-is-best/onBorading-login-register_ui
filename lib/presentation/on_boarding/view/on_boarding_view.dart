@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:on_boarding_login_register_ui/app/components/my_text.dart';
 import 'package:on_boarding_login_register_ui/app/components/styles_manger.dart';
@@ -41,38 +42,32 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: SizedBox(
-          height: context.height,
+        body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(AppSpacing.ap12),
             child: Column(children: [
-              Expanded(
-                child: Align(
-                  alignment: Alignment.topRight,
-                  child: MyButton(
-                    text: 'Skip',
-                    btnColor: const Color.fromARGB(255, 255, 217, 48),
-                    txtColor: Colors.black,
-                    borderSize: 50,
-                    onPressed: () {
-                      context.pushReplacement(const LoginView());
-                    },
-                    width: 75,
-                  ),
+              Align(
+                alignment: Alignment.topRight,
+                child: MyButton(
+                  text: 'Skip',
+                  btnColor: const Color.fromARGB(255, 255, 217, 48),
+                  txtColor: Colors.black,
+                  borderSize: 50,
+                  onPressed: () {
+                    context.pushReplacement(const LoginView());
+                  },
+                  width: 75,
                 ),
               ),
-              Expanded(
-                flex: 2,
-                child: SizedBox(
-                  height: 140,
-                  child: Image.asset(
-                    const $AssetsImagesGen().logo.path,
-                    fit: BoxFit.contain,
-                  ),
+              SizedBox(
+                child: Image.asset(
+                  const $AssetsImagesGen().logo.path,
+                  fit: BoxFit.contain,
+                  height: 130.h,
                 ),
               ),
-              Expanded(
-                flex: 6,
+              SizedBox(
+                height: .5.sh,
                 child: PageView(
                   allowImplicitScrolling: true,
                   controller: boardController,
@@ -86,10 +81,8 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                                 children: [
                                   SvgPicture.asset(
                                     item.urlImage,
-                                    height: .3 * context.height,
-                                    fit: BoxFit.cover,
-                                    width:
-                                        MediaQuery.of(context).size.width * .90,
+                                    fit: BoxFit.contain,
+                                    height: .3.sh,
                                   ),
                                   const SizedBox(
                                     height: AppSpacing.ap12,
@@ -118,48 +111,40 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                       .toList(),
                 ),
               ),
-              Expanded(
-                child: SizedBox(
-                  width: context.width,
-                  child: Center(
-                    child: buildIndicator(
-                        boardController: boardController,
-                        count: _onBoardingData.length),
-                  ),
-                ),
+              Center(
+                child: buildIndicator(
+                    boardController: boardController,
+                    count: _onBoardingData.length),
               ),
-              Expanded(
-                child: SizedBox(
-                  width: context.width,
-                  child: Center(
-                    child: MyButton(
-                        text: 'Get Started',
-                        onPressed: () {
-                          context.pushReplacement(const LoginView());
-                        },
-                        borderSize: AppSize.ap8,
-                        btnColor: Colors.teal),
-                  ),
-                ),
-              ),
-              Expanded(
+              SizedBox(height: AppSize.ap30.h),
+              SizedBox(
+                width: context.width,
                 child: Center(
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        MyText(
-                            label: "Don't have any account?",
-                            textStyle: getRegularStyle()),
-                        TextButton(
-                            onPressed: () {
-                              context.push(const RegisterView());
-                            },
-                            child: Text(
-                              'Sign Up',
-                              style: getLightStyle(color: Colors.teal),
-                            ))
-                      ]),
+                  child: MyButton(
+                      text: 'Get Started',
+                      onPressed: () {
+                        context.pushReplacement(const LoginView());
+                      },
+                      borderSize: AppSize.ap8,
+                      btnColor: Colors.teal),
                 ),
+              ),
+              SizedBox(height: AppSize.ap30.h),
+              Center(
+                child:
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  MyText(
+                      label: "Don't have any account?",
+                      textStyle: getRegularStyle()),
+                  TextButton(
+                      onPressed: () {
+                        context.push(const RegisterView());
+                      },
+                      child: Text(
+                        'Sign Up',
+                        style: getLightStyle(color: Colors.teal),
+                      ))
+                ]),
               )
             ]),
           ),
