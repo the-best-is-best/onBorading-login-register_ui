@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:on_boarding_login_register_ui/app/components/my_text.dart';
 import 'package:on_boarding_login_register_ui/app/components/styles_manger.dart';
 
 import '../../core/resources/value_manger.dart';
@@ -27,9 +28,9 @@ class MyForm extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          label,
-          style: getRegularStyle(),
+        MyText(
+          label: label,
+          textStyle: getRegularStyle(),
         ),
         const SizedBox(height: AppSize.ap12),
         TextFormField(

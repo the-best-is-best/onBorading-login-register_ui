@@ -5,59 +5,72 @@ import 'package:on_boarding_login_register_ui/core/resources/font_manager.dart';
 import 'package:phone_form_field/phone_form_field.dart';
 
 import '../../core/resources/value_manger.dart';
+import 'my_text.dart';
 
 class MyPhoneFormForm extends StatelessWidget {
   const MyPhoneFormForm({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return PhoneFormField(
-      defaultCountry: IsoCode.EG, // default
-      countryCodeStyle: getMediumStyle(),
-      decoration: const InputDecoration(
-        labelText: 'Phone', // default to null
-        hintText: 'Eg.812345678',
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.grey,
-            width: AppSpacing.ap1_5,
-          ),
-          borderRadius: BorderRadius.all(
-            Radius.circular(AppSpacing.ap8),
-          ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        MyText(
+          label: 'Phone',
+          textStyle: getRegularStyle(),
         ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.black,
-            width: AppSpacing.ap1_5,
+        const SizedBox(height: AppSize.ap12),
+        PhoneFormField(
+          defaultCountry: IsoCode.EG, // default
+          countryCodeStyle: getMediumStyle(),
+          decoration: const InputDecoration(
+            hintText: 'Eg.812345678',
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.grey,
+                width: AppSpacing.ap1_5,
+              ),
+              borderRadius: BorderRadius.all(
+                Radius.circular(AppSpacing.ap8),
+              ),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.black,
+                width: AppSpacing.ap1_5,
+              ),
+              borderRadius: BorderRadius.all(
+                Radius.circular(AppSpacing.ap8),
+              ),
+            ),
+            errorBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.red,
+                width: AppSpacing.ap1_5,
+              ),
+              borderRadius: BorderRadius.all(
+                Radius.circular(AppSpacing.ap8),
+              ),
+            ),
           ),
-          borderRadius: BorderRadius.all(
-            Radius.circular(AppSpacing.ap8),
-          ),
-        ),
-        errorBorder: OutlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.red,
-            width: AppSpacing.ap1_5,
-          ),
-          borderRadius: BorderRadius.all(
-            Radius.circular(AppSpacing.ap8),
-          ),
-        ),
-      ),
-      validator: PhoneValidator.compose([
-        PhoneValidator.required(),
-        PhoneValidator.validMobile(),
-      ]), // default PhoneValidator.valid()
-      countrySelectorNavigator: const CountrySelectorNavigator.bottomSheet(),
-      showFlagInInput: false, // default
-      flagSize: FontSize.s16, // default
+          validator: PhoneValidator.compose([
+            PhoneValidator.required(),
+            PhoneValidator.validMobile(),
+          ]), // default PhoneValidator.valid()
+          countrySelectorNavigator:
+              const CountrySelectorNavigator.bottomSheet(),
+          showFlagInInput: false, // default
+          flagSize: FontSize.s16, // default
 
-      autofillHints: const [AutofillHints.telephoneNumber], // default to null
-      enabled: true, // default
-      autovalidateMode: AutovalidateMode.disabled, // default
-      onSaved: (p) => print('saved $p'), // default null
-      onChanged: (p) => print('saved $p'), // default null
+          autofillHints: const [
+            AutofillHints.telephoneNumber
+          ], // default to null
+          enabled: true, // default
+          autovalidateMode: AutovalidateMode.disabled, // default
+          onSaved: (p) => print('saved $p'), // default null
+          onChanged: (p) => print('saved $p'), // default null
+        ),
+      ],
     );
   }
 }
