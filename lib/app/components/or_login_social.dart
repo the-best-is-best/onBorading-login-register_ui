@@ -5,7 +5,7 @@ import 'package:on_boarding_login_register_ui/core/resources/font_manager.dart';
 import 'package:tbib_loading_transition_button_and_social/tbib_loading_transition_button_and_social.dart';
 
 import '../../core/resources/value_manger.dart';
-import '../../tbib_loading_button/tbib_social_loading_button.dart';
+import '../../library_editing/tbib_loading_button/tbib_social_loading_button.dart';
 import 'my_text.dart';
 
 class OrLoginSocial extends StatefulWidget {

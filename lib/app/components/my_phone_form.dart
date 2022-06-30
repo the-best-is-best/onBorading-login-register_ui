@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:on_boarding_login_register_ui/app/components/styles_manger.dart';
 import 'package:on_boarding_login_register_ui/core/resources/font_manager.dart';
-import 'package:phone_form_field/phone_form_field.dart';
+import 'package:tbib_phone_form_field/tbib_phone_form_field.dart';
 
 import '../../core/resources/value_manger.dart';
 import 'my_text.dart';
@@ -21,7 +21,10 @@ class MyPhoneFormForm extends StatelessWidget {
         ),
         const SizedBox(height: AppSize.ap12),
         PhoneFormField(
-          defaultCountry: IsoCode.EG, // default
+          defaultCountry: IsoCode.EG,
+          showDropDownIcon: true,
+          dropDownIcon: Icons.arrow_drop_down,
+          dropDownIconSize: FontSize.s40,
           countryCodeStyle: getMediumStyle(),
           decoration: const InputDecoration(
             hintText: 'Eg.812345678',
@@ -59,8 +62,8 @@ class MyPhoneFormForm extends StatelessWidget {
           ]), // default PhoneValidator.valid()
           countrySelectorNavigator:
               const CountrySelectorNavigator.bottomSheet(),
-          showFlagInInput: false, // default
-          flagSize: FontSize.s16, // default
+          showFlagInInput: false,
+          flagSize: FontSize.s16,
 
           autofillHints: const [
             AutofillHints.telephoneNumber

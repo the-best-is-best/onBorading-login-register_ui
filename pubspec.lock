@@ -401,13 +401,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.0.0"
-  phone_form_field:
-    dependency: "direct main"
-    description:
-      name: phone_form_field
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "6.1.0"
   phone_number_metadata:
     dependency: transitive
     description:
@@ -511,6 +504,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  tbib_phone_form_field:
+    dependency: "direct main"
+    description:
+      name: tbib_phone_form_field
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.2"
   term_glyph:
     dependency: transitive
     description:
@@ -583,4 +583,4 @@ packages:
     version: "3.1.1"
 sdks:
   dart: ">=2.17.5 <3.0.0"
-  flutter: ">=3.0.0"
+  flutter: ">=2.11.0-0.1.pre"
