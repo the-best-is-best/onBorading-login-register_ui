@@ -40,3 +40,4 @@ jobs:
           artifacts: "build/app/outputs/flutter-apk/*,build/ios/iphoneos/*"
           tag: v1.0.${{ github.run_number }}
           token: ${{ secrets.TOKEN }}
+          allowUpdates: true
