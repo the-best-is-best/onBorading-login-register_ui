@@ -5,7 +5,6 @@ import 'package:on_boarding_login_register_ui/core/resources/font_manager.dart';
 import 'package:tbib_loading_transition_button_and_social/tbib_loading_transition_button_and_social.dart';
 
 import '../../core/resources/value_manger.dart';
-import '../../library_editing/tbib_loading_button/tbib_social_loading_button.dart';
 import 'my_text.dart';
 
 class OrLoginSocial extends StatefulWidget {
@@ -16,8 +15,8 @@ class OrLoginSocial extends StatefulWidget {
 }
 
 class _OrLoginSocialState extends State<OrLoginSocial> {
-  CustomLoadingSignButtonController googleLoginController =
-      CustomLoadingSignButtonController();
+  LoadingSignButtonController googleLoginController =
+      LoadingSignButtonController();
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +44,8 @@ class _OrLoginSocialState extends State<OrLoginSocial> {
           const SizedBox(
             height: AppSize.ap12,
           ),
-          CustomLoadingSignButton(
+          LoadingSignButton(
+            boarderSize: AppSize.ap8,
             controller: googleLoginController,
             buttonType: ButtonType.google,
             onSubmit: () {
